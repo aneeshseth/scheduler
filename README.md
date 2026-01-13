@@ -9,6 +9,13 @@ Tasks represent file-based workloads (e.g., encryption/decryption) and are execu
 
 ---
 
+
+https://github.com/user-attachments/assets/022677c6-69e1-4516-940f-9e848ebc9e62
+
+This video shows multiple worker threads concurrently picking up tasks from the bounded queue, with overlapping execution across distinct thread IDs.
+This shows parallel task execution, backpressure at the queue boundary (seen via the metrics showing the max queue depth being 3, however number of tasks in queue being much larger), and correct task completion under concurrent load.
+
+
 ## Key Features
 
 - Producers block when the queue reaches a configurable maximum size, preventing unbounded growth under load.
