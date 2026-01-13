@@ -18,10 +18,9 @@ Tasks represent file-based workloads (e.g., encryption/decryption) and are execu
 - Tasks are dequeued under mutual exclusion, ensuring each task is executed exactly once.
 
 - Atomic metrics track:
-
-- tasks submitted
-- tasks completed
-- maximum observed queue depth
+    - tasks submitted
+    - tasks completed
+    - maximum observed queue depth
 
 ---
 
