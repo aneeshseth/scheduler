@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a **bounded, multithreaded task execution runtime** implemented in C++.
+This project is a bounded, multithreaded task execution runtime implemented in C++.
 The intention here is to mainly explore thread pools, synchronization, backpressure, and some sample runtime observability in C++.
 
 Tasks represent file-based workloads (e.g., encryption/decryption) and are executed concurrently by a fixed set of worker threads.
@@ -11,21 +11,17 @@ Tasks represent file-based workloads (e.g., encryption/decryption) and are execu
 
 ## Key Features
 
-- **Bounded task queue with backpressure**
-  Producers block when the queue reaches a configurable maximum size, preventing unbounded growth under load.
+- Producers block when the queue reaches a configurable maximum size, preventing unbounded growth under load.
 
-- **Worker thread pool**
-  A fixed number of worker threads execute tasks concurrently using a shared queue protected by mutexes and condition variables.
+- A fixed number of worker threads execute tasks concurrently using a shared queue protected by mutexes and condition variables.
 
-- **Safe task scheduling**
-  Tasks are dequeued under mutual exclusion, ensuring each task is executed exactly once.
+- Tasks are dequeued under mutual exclusion, ensuring each task is executed exactly once.
 
-- **Runtime metrics**
-  Atomic metrics track:
+- Atomic metrics track:
 
-  - tasks submitted
-  - tasks completed
-  - maximum observed queue depth
+- tasks submitted
+- tasks completed
+- maximum observed queue depth
 
 ---
 
